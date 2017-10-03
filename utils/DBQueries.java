@@ -1,0 +1,31 @@
+package com.medplus.departmentinfo.utils;
+
+public class DBQueries {
+
+	// department
+	final static public String ADD_DEPTARTMENT_QRY = "INSERT INTO DEPARTMENT (DEPTNO, DEPTNAME, LOCATION)VALUES(?,?,?)";
+	final static public String UPDATE_DEPARTMENT_QRY = "UPDATE DEPARTMENT SET DEPTNAME =?, LOCATION=? WHERE DEPTNO=? ";
+	final static public String GET_ALL_DEPARTMENT_QRY = "SELECT DEPTNO, DEPTNAME, LOCATION FROM DEPARTMENT";
+	final static public String GET_DEPARTMENT_BY_ID_QRY = "SELECT DEPTNO, DEPTNAME, LOCATION FROM DEPARTMENT WHERE DEPTNO=?";
+	final static public String GET_ALL_EMPLOYEE_FROM_DEPTARTMENT = "SELECT EMPCODE, FIRSTNAME, LASTNAME,JOB ,DateOfJoin,SALARY,DEPTNO FROM EMPLOYEE WHERE DEPTNO=?";
+	// Employee
+	final static public String DELETE_EMPLOYEE_QRY = "DELETE FROM EMPLOYEE WHERE EMPCODE=?";
+	final static public String ADD_EMPLOYEE_QRY = "INSERT INTO EMPLOYEE(EMPCODE, FIRSTNAME, LASTNAME,JOB ,DateOfJoin,SALARY,DEPTNO) VALUES(?,?,?,?,?,?,?)";
+	final static public String GET_EMPLOYEE_BY_ID_QRY = "SELECT EMPCODE, FIRSTNAME, LASTNAME,JOB ,DateOfJoin,SALARY,DEPTNO FROM EMPLOYEE WHERE EMPCODE=?";
+	final static public String GET_ALL_EMPLOYEE_QRY = "SELECT EMPCODE, FIRSTNAME, LASTNAME,JOB ,DateOfJoin,SALARY,DEPTNO FROM EMPLOYEE";
+	final static public String GET_ALL_EMPLOYEE_FROM_DEPT_QRY = "SELECT EMPCODE, FIRSTNAME, LASTNAME,JOB ,DateOfJoin,SALARY,DEPTNO FROM EMPLOYEE where DEPTNO=?";
+	final static public String UPDATE_EMPLOYEE_QRY = "UPDATE EMPLOYEE SET FIRSTNAME =?, LASTNAME=? , JOB=?,SALARY=?, DEPTNO=?  WHERE EMPCODE=? ";
+
+	// userLogin
+	final static public String DELETE_USER_QRY = "DELETE FROM Login WHERE UserId=?";
+	final static public String ADD_USER_TO_LOGIN_QRY = "INSERT INTO Login(UserId,Password,Role) VALUES (?,?,?)";
+	final static public String VALIDATE_USER_QRY = "SELECT UserId , Password , Role FROM Login WHERE UserId=?";
+	final static public String UPDATE_PASSWORD_QRY = "UPDATE Login SET Password=? WHERE UserId=?";
+	final static public String UPDATE_ROLE_QRY = "UPDATE Login SET Role=? WHERE UserId=?";
+
+}
+/*
+ * EMPCODE VARCHAR(5) NOT NULL, FIRSTNAME VARCHAR(30) NOT NULL, LASTNAME
+ * VARCHAR(30) NOT NULL, JOB VARCHAR(30) NOT NULL, DateOfJoin Date, SALARY
+ * DOUBLE, DEPTNO
+ */
